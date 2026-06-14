@@ -1,0 +1,31 @@
+---
+import { LANGUAGES, pathWithBase, UI_COPY } from "../lib/site";
+
+interface Props {
+  currentPath?: string;
+  lang?: string;
+}
+
+const { currentPath = "/", lang = "en" } = Astro.props;
+const language = lang === "ko" ? "ko" : "en";
+const copy = UI_COPY[language];
+
+function isCurrent(path: string): boolean {
+  if (currentPath === "/" && path === LANGUAGES.en.path) {
+    return true;
+  }
+
+  return currentPath === path || currentPath.startsWith(path);
+}
+---
+
+<header class="site-header">
+  <nav class="site-nav" aria-label={copy.primaryNavigation}>
+    <a class="brand" href={pathWithBase("/")}>{copy.siteTitle}</a>
+    <div class="nav-links">
+      <a href={pathWithBase(LANGUAGES.en.path)} aria-current={isCurrent(LANGUAGES.en.path) ? "page" : undefined}>EN</a>
+      <a href={pathWithBase(LANGUAGES.ko.path)} aria-current={isCurrent(LANGUAGES.ko.path) ? "page" : undefined}>KO</a>
+      <a href={pathWithBase("/rss.xml")}>RSS</a>
+    </div>
+  </nav>
+</header>

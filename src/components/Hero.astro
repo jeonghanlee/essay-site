@@ -1,0 +1,18 @@
+---
+import { DEFAULT_HERO_IMAGE, pathWithBase } from "../lib/site";
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <img class="hero-image" src={pathWithBase(DEFAULT_HERO_IMAGE)} alt="" loading="eager" decoding="async" />
+  <div class="hero-content">
+    <p class="eyebrow">Essay Archive</p>
+    <h1 id="hero-title">Long-form notes, owned at the source.</h1>
+    <p>
+      Essays live in Git, publish as static pages, and move through social channels only as announcements.
+    </p>
+    <div class="hero-actions" aria-label="Archive selection">
+      <a href={pathWithBase("/en/")}>EN</a>
+      <a href={pathWithBase("/ko/")}>KO</a>
+    </div>
+  </div>
+</section>

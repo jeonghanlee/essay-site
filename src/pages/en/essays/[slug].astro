@@ -1,0 +1,75 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {
+  formatDate,
+  getAlternateEssays,
+  getEssayPath,
+  getLanguageEssays,
+  getRelatedEssays,
+  LANGUAGES,
+  pathWithBase,
+  UI_COPY,
+} from "../../../lib/site";
+
+export async function getStaticPaths() {
+  const entries = getLanguageEssays(await getCollection("essays"), "en");
+  return entries.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const allEntries = await getCollection("essays");
+const alternates = getAlternateEssays(allEntries, entry);
+const relatedEssays = getRelatedEssays(allEntries, entry);
+const currentPath = getEssayPath(entry);
+const copy = UI_COPY.en;
+const { Content } = await render(entry);
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.summary}
+  lang="en"
+  currentPath={currentPath}
+  image={entry.data.heroImage}
+  alternates={alternates.map((alternate) => ({ lang: alternate.data.language, path: getEssayPath(alternate) }))}
+>
+  <article class="essay-page">
+    <header class="essay-header">
+      <p class="eyebrow">{LANGUAGES[entry.data.language].name}</p>
+      <h1>{entry.data.title}</h1>
+      <p class="essay-summary">{entry.data.summary}</p>
+      <div class="essay-meta">
+        <time datetime={entry.data.pubDate.toISOString()}>{formatDate(entry.data.pubDate, entry.data.language)}</time>
+        {entry.data.author && <span>{entry.data.author}</span>}
+        {entry.data.tags.map((tag) => <span>{tag}</span>)}
+      </div>
+      {alternates.length > 0 && (
+        <nav class="language-switch" aria-label={copy.relatedLanguageVersions}>
+          {alternates.map((alternate) => (
+            <a href={pathWithBase(getEssayPath(alternate))}>{LANGUAGES[alternate.data.language].label}</a>
+          ))}
+        </nav>
+      )}
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+    {relatedEssays.length > 0 && (
+      <aside class="related-essays" aria-label={copy.relatedEssays}>
+        <h2>{copy.relatedEssays}</h2>
+        <ul>
+          {relatedEssays.map((item) => (
+            <li>
+              <a href={pathWithBase(getEssayPath(item.entry))}>{item.relation.label}</a>
+              {item.relation.note && <p>{item.relation.note}</p>}
+            </li>
+          ))}
+        </ul>
+      </aside>
+    )}
+  </article>
+</BaseLayout>

@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import EssayList from "../../../components/EssayList.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getLanguageEssays } from "../../../lib/site";
+
+const essays = getLanguageEssays(await getCollection("essays"), "en");
+---
+
+<BaseLayout title="Essays" description="Long-form essays from the source archive." lang="en" currentPath="/en/essays/">
+  <section class="archive-heading">
+    <p class="eyebrow">EN</p>
+    <h1>Essays</h1>
+    <p>Independent long-form notes with stable source links, RSS, and social announcement drafts.</p>
+  </section>
+  <EssayList essays={essays} />
+</BaseLayout>

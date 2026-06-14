@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import EssayList from "../components/EssayList.astro";
+import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLanguageEssays, pathWithBase, SITE_DESCRIPTION } from "../lib/site";
+
+const englishEssays = getLanguageEssays(await getCollection("essays"), "en");
+const featured = englishEssays.find((entry) => entry.data.feature) ?? englishEssays[0];
+const latestEssays = englishEssays.slice(0, 4);
+---
+
+<BaseLayout title="Essays" description={SITE_DESCRIPTION} currentPath="/">
+  <Hero />
+
+  <section class="home-grid" aria-label="Essay archive">
+    <div class="latest-panel">
+      <p class="eyebrow">Featured</p>
+      {featured ? (
+        <article class="featured-essay">
+          <h2><a href={pathWithBase(`/${featured.data.language}/essays/${featured.data.slug}/`)}>{featured.data.title}</a></h2>
+          <p>{featured.data.summary}</p>
+        </article>
+      ) : (
+        <p>No published essays yet.</p>
+      )}
+    </div>
+
+    <section class="archive-panel" aria-labelledby="latest-title">
+      <div class="section-heading">
+        <p class="eyebrow">EN</p>
+        <h2 id="latest-title">Latest Essays</h2>
+        <a href={pathWithBase("/en/")}>View all</a>
+      </div>
+      <EssayList essays={latestEssays} />
+    </section>
+  </section>
+</BaseLayout>

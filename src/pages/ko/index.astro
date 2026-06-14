@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import EssayList from "../../components/EssayList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getLanguageEssays } from "../../lib/site";
+
+const essays = getLanguageEssays(await getCollection("essays"), "ko");
+---
+
+<BaseLayout title="에세이" description="원문 저장소에서 발행하는 긴 글 모음입니다." lang="ko" currentPath="/ko/">
+  <section class="archive-heading">
+    <p class="eyebrow">KO</p>
+    <h1>에세이</h1>
+    <p>원문 링크, RSS, 소셜 알림 초안을 갖춘 긴 글 모음입니다.</p>
+  </section>
+  <EssayList essays={essays} />
+</BaseLayout>

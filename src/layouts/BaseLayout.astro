@@ -1,0 +1,54 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { pathWithBase, SITE_DESCRIPTION, SITE_TITLE, UI_COPY } from "../lib/site";
+import "../styles/global.css";
+
+type AlternateLink = {
+  lang: string;
+  path: string;
+};
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: string;
+  currentPath?: string;
+  image?: string;
+  alternates?: AlternateLink[];
+}
+
+const {
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  lang = "en",
+  currentPath = "/",
+  image,
+  alternates = [],
+} = Astro.props;
+
+const language = lang === "ko" ? "ko" : "en";
+const copy = UI_COPY[language];
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <BaseHead title={title} description={description} lang={language} path={currentPath} image={image} alternates={alternates} />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">{copy.skipToContent}</a>
+    <SiteHeader currentPath={currentPath} lang={language} />
+    <main id="content">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>{copy.footerText}</p>
+      <nav aria-label={copy.feeds}>
+        <a href={pathWithBase("/rss.xml")}>{copy.allRss}</a>
+        <a href={pathWithBase("/rss/ko.xml")}>{copy.koRss}</a>
+        <a href={pathWithBase("/rss/en.xml")}>{copy.enRss}</a>
+      </nav>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+---
+import type { EssayEntry } from "../lib/site";
+import { formatDate, getEssayPath, LANGUAGES, pathWithBase } from "../lib/site";
+
+interface Props {
+  essays: EssayEntry[];
+}
+
+const { essays } = Astro.props;
+---
+
+<ol class="essay-list">
+  {essays.map((essay) => (
+    <li class="essay-row">
+      <a class="essay-row-title" href={pathWithBase(getEssayPath(essay))}>{essay.data.title}</a>
+      <p>{essay.data.summary}</p>
+      <div class="essay-meta">
+        <time datetime={essay.data.pubDate.toISOString()}>{formatDate(essay.data.pubDate, essay.data.language)}</time>
+        <span>{LANGUAGES[essay.data.language].label}</span>
+        {essay.data.tags.map((tag) => <span>{tag}</span>)}
+      </div>
+    </li>
+  ))}
+</ol>
