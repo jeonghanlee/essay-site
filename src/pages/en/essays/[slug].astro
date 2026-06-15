@@ -1,7 +1,9 @@
 ---
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ShareLinks from "../../../components/ShareLinks.astro";
 import {
+  absoluteUrl,
   formatDate,
   getAlternateEssays,
   getEssayPath,
@@ -58,6 +60,7 @@ const { Content } = await render(entry);
     <div class="prose">
       <Content />
     </div>
+    <ShareLinks url={absoluteUrl(getEssayPath(entry))} title={entry.data.title} language={entry.data.language} />
     {relatedEssays.length > 0 && (
       <aside class="related-essays" aria-label={copy.relatedEssays}>
         <h2>{copy.relatedEssays}</h2>

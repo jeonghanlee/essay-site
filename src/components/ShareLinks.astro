@@ -1,0 +1,28 @@
+---
+import type { Language } from "../lib/site";
+import { UI_COPY } from "../lib/site";
+
+interface Props {
+  url: string;
+  title: string;
+  language: Language;
+}
+
+const { url, title, language } = Astro.props;
+const copy = UI_COPY[language];
+const encodedUrl = encodeURIComponent(url);
+const encodedText = encodeURIComponent(title);
+
+const targets = [
+  { label: "X", href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}` },
+  { label: "Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}` },
+  { label: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}` },
+];
+---
+
+<nav class="share-links" aria-label={copy.share}>
+  <span class="share-label">{copy.share}</span>
+  {targets.map((target) => (
+    <a class="share-link" href={target.href} target="_blank" rel="noopener noreferrer">{target.label}</a>
+  ))}
+</nav>

@@ -46,6 +46,9 @@ const locale = language === "ko" ? "ko_KR" : "en_US";
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" />
+{language === "ko" && (
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" />
+)}
 <link rel="canonical" href={canonical} />
 <link rel="alternate" type="application/rss+xml" title={`${siteTitle} RSS`} href={pathWithBase("/rss.xml")} />
 <link rel="alternate" type="application/rss+xml" title={UI_COPY[language].koRss} href={pathWithBase("/rss/ko.xml")} />
