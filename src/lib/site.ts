@@ -13,6 +13,9 @@ export const UI_COPY = {
     relatedLanguageVersions: "대응 글",
     relatedEssays: "관련 글",
     share: "공유",
+    previousEssay: "이전 글",
+    nextEssay: "다음 글",
+    essayNavigation: "글 이동",
     footerText: "원문은 이곳에 보관하고, 소셜 채널에는 새 글 알림과 원문 링크만 남깁니다.",
     feeds: "피드",
     allRss: "전체 RSS",
@@ -26,6 +29,9 @@ export const UI_COPY = {
     relatedLanguageVersions: "Alternate version",
     relatedEssays: "Related Essays",
     share: "Share",
+    previousEssay: "Previous",
+    nextEssay: "Next",
+    essayNavigation: "Essay navigation",
     footerText: "Original essays live here. Social channels announce new work and point back to the source.",
     feeds: "Feeds",
     allRss: "All RSS",
@@ -88,6 +94,35 @@ export function getPublicEssays(entries: EssayEntry[]): EssayEntry[] {
 
 export function getLanguageEssays(entries: EssayEntry[], language: Language): EssayEntry[] {
   return getPublicEssays(entries).filter((entry) => entry.data.language === language);
+}
+
+export function getSeriesEssays(entries: EssayEntry[], language: Language): EssayEntry[] {
+  return entries
+    .filter((entry) => !entry.data.draft && entry.data.language === language)
+    .sort((left, right) => {
+      const dateOrder = left.data.pubDate.getTime() - right.data.pubDate.getTime();
+      if (dateOrder !== 0) {
+        return dateOrder;
+      }
+
+      return left.data.sortOrder - right.data.sortOrder;
+    });
+}
+
+export function getAdjacentEssays(
+  entries: EssayEntry[],
+  entry: EssayEntry,
+): { previous: EssayEntry | undefined; next: EssayEntry | undefined } {
+  const series = getSeriesEssays(entries, entry.data.language);
+  const index = series.findIndex((candidate) => candidate.id === entry.id);
+  if (index === -1) {
+    return { previous: undefined, next: undefined };
+  }
+
+  return {
+    previous: series[index - 1],
+    next: series[index + 1],
+  };
 }
 
 export function getAlternateEssays(entries: EssayEntry[], entry: EssayEntry): EssayEntry[] {

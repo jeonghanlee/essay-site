@@ -2,9 +2,11 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ShareLinks from "../../../components/ShareLinks.astro";
+import EssayNavigation from "../../../components/EssayNavigation.astro";
 import {
   absoluteUrl,
   formatDate,
+  getAdjacentEssays,
   getAlternateEssays,
   getEssayPath,
   getLanguageEssays,
@@ -26,6 +28,7 @@ const { entry } = Astro.props;
 const allEntries = await getCollection("essays");
 const alternates = getAlternateEssays(allEntries, entry);
 const relatedEssays = getRelatedEssays(allEntries, entry);
+const { previous, next } = getAdjacentEssays(allEntries, entry);
 const currentPath = getEssayPath(entry);
 const copy = UI_COPY.en;
 const { Content } = await render(entry);
@@ -61,6 +64,7 @@ const { Content } = await render(entry);
       <Content />
     </div>
     <ShareLinks url={absoluteUrl(getEssayPath(entry))} title={entry.data.title} language={entry.data.language} />
+    <EssayNavigation previous={previous} next={next} language={entry.data.language} />
     {relatedEssays.length > 0 && (
       <aside class="related-essays" aria-label={copy.relatedEssays}>
         <h2>{copy.relatedEssays}</h2>

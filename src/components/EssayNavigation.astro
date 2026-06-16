@@ -1,0 +1,30 @@
+---
+import type { EssayEntry, Language } from "../lib/site";
+import { getEssayPath, pathWithBase, UI_COPY } from "../lib/site";
+
+interface Props {
+  previous?: EssayEntry;
+  next?: EssayEntry;
+  language: Language;
+}
+
+const { previous, next, language } = Astro.props;
+const copy = UI_COPY[language];
+---
+
+{(previous || next) && (
+  <nav class="essay-nav" aria-label={copy.essayNavigation}>
+    {previous && (
+      <a class="essay-nav-link essay-nav-prev" href={pathWithBase(getEssayPath(previous))} rel="prev">
+        <span class="essay-nav-label">{copy.previousEssay}</span>
+        <span class="essay-nav-title">{previous.data.title}</span>
+      </a>
+    )}
+    {next && (
+      <a class="essay-nav-link essay-nav-next" href={pathWithBase(getEssayPath(next))} rel="next">
+        <span class="essay-nav-label">{copy.nextEssay}</span>
+        <span class="essay-nav-title">{next.data.title}</span>
+      </a>
+    )}
+  </nav>
+)}
