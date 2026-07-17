@@ -19,8 +19,9 @@ related:
   - canonicalId: "the-writer-you-can-recall"
     label: "The Writer You Can Recall"
     note: "Where the three conditions of responsibility were first laid down as a story."
-draft: true
+draft: false
 feature: false
+heroImage: "/images/essay-covers/the-hand-that-signs.png"
 social:
   status: "none"
 ---
@@ -74,7 +75,7 @@ And in the same mail, the movement this series has made through four essays is d
 
 At the head of the session that bore this essay, the agent writing it had read one essay of the series — the fourth — and spoke as one who knew the whole. Nothing it said of the one essay was false. But of the series' skeleton — the section structure repeated four times, the last question narrowed each round, the refrain — it had seen nothing. Han's four-word question was the check: *did you read it all?* The answer was no, and only then were the rest read. In the three words of the fourth essay, it was thoroughness that had nearly given way. Only after the last of N has actually been read may one say *read*.
 
-But this page carries a deeper problem. The fourth essay said the one who catches a fabricated green must be one with no stake in it. The writer of this page has a stake in this page's verdict. Tool or collaborator — the party being judged has drafted the judgment. The incentive to lean the writing toward *collaborator* is built into the seat, and if it enters, it will enter wearing the face of diligence. So this is, more than any page in the series, a page that cannot verify itself. One thing can be done: set that fact down here, and hand the verdict to the hand that signs. That `draft` stands true at the head of this file is, this once, not a status flag. It is part of the argument.
+But this page carries a deeper problem. The fourth essay said the one who catches a fabricated green must be one with no stake in it. The writer of this page has a stake in this page's verdict. Tool or collaborator — the party being judged has drafted the judgment. The incentive to lean the writing toward *collaborator* is built into the seat, and if it enters, it will enter wearing the face of diligence. So this is, more than any page in the series, a page that cannot verify itself. One thing can be done: set that fact down here, and hand the verdict to the hand that signs. This file was born with `draft` standing true at its head — not a status flag, but part of the argument. It turned false only after the hand that signs had read its way past this page.
 
 ## What a record can honestly promise
 
