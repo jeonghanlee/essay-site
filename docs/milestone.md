@@ -6,7 +6,7 @@ This document tracks repository-local milestones, carry-forward items, and exter
 
 **Out of scope:** detailed essay text review, social account operation, credentials, analytics, comments, and engagement workflows.
 
-Next session entry point: M1.3 is complete. Ready to start now (owner to set priority): M6.1 authoring guide in `docs/content.md`; M8.1 link and RSS verification; M8.2 responsive visual pass. Preserve the live deploy and the passing build. Do not start carry-forward decisions (D1-D4) unless the owner reorders them.
+Next session entry point: M5.3 is complete. Ready to start now (owner to set priority): M6.1 authoring guide in `docs/content.md`; M8.1 link and RSS verification; M8.2 responsive visual pass. Preserve the live deploy and the passing build. Do not start carry-forward decisions (D1-D4) unless the owner reorders them.
 
 ## Register model
 
@@ -26,7 +26,7 @@ Two-level work tree. Tracking IDs are three kinds: **M** work tasks (`M<group>` 
 | M2 | Content archive | 4/4 | ✅ | — |
 | M3 | Sharing | 1/1 | ✅ | — |
 | M4 | Typography | 1/1 | ✅ | — |
-| M5 | Repository docs | 2/2 | ✅ | — |
+| M5 | Repository docs | 3/3 | ✅ | — |
 | M6 | Content operations | 0/2 | ⬜ | ▶ M6.1 |
 | M7 | Publishing | 3/3 | ✅ | — |
 | M8 | Quality | 0/2 | ⬜ | ▶ M8.1, M8.2 |
@@ -46,7 +46,8 @@ Two-level work tree. Tracking IDs are three kinds: **M** work tasks (`M<group>` 
 | M4.1 | KO font baseline | ✅ | | | KO content uses `Noto Serif KR` (명조), loaded on KO pages only; UI chrome keeps `Noto Sans KR` (commit 8c8e11b). |
 | M5.1 | README handoff | ✅ | | | `README.md` documents architecture, content model, development, Pages deployment, and the work register. |
 | M5.2 | Canonical work register | ✅ | | | `docs/milestone.md` is the repository-local source for future milestones. |
-| M6.1 | Authoring guide | ⬜ | ▶ | — | Create `docs/content.md` with frontmatter rules, publish checklist, related essay conventions, and draft handling. |
+| M5.3 | Korean essay style reference | ✅ | | | `docs/korean-style.md` defines register, series vocabulary, coinage limits, literal-translation traps, loanword and naming rules, and a pre-publish checklist for `src/content/essays/ko/`; linked from `README.md`. |
+| M6.1 | Authoring guide | ⬜ | ▶ | — | Create `docs/content.md` with frontmatter rules, publish checklist, related essay conventions, and draft handling. Korean word choice and register stay in `docs/korean-style.md` (M5.3). |
 | M6.2 | Social announcement guide | ⬜ | | ← D4 | Create `docs/social.md` or expand `social/README.md` with per-channel draft rules and canonical URL handling. |
 | M7.1 | Deploy workflow branch alignment | ✅ | | | `deploy.yml` push trigger changed `main` → `master` to match the local branch (2026-06-14). |
 | M7.2 | Repository remote creation | ✅ | | | `origin` = `git@github.com:jeonghanlee/essay-site.git`; `master` pushed and tracking `origin/master`. |
@@ -64,7 +65,7 @@ Two-level work tree. Tracking IDs are three kinds: **M** work tasks (`M<group>` 
 | D3 | Self-host KO font | Decided | Use Google Fonts (Noto Serif KR) rather than self-host; revisit only if external font loading becomes undesirable. |
 | D4 | Social draft cleanup | Open | leaving-social-feeds drafts removed with the owning-the-essay pair; new Codex drafts under `social/linkedin/` (door, writer x2) are uncommitted and pending review. |
 
-Tally: M-tasks ✅ 14 / ⬜ 4 (18 total) · gates 1 · decisions 4 (open 3, decided 1) — 23 work units.
+Tally: M-tasks ✅ 15 / ⬜ 4 (19 total) · gates 1 · decisions 4 (open 3, decided 1) — 24 work units.
 
 ## Migration map (flat register → M-tree)
 

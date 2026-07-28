@@ -53,6 +53,9 @@ Draft essays remain in the content tree with `draft: true`. They are excluded fr
 5. Add or update matching announcement drafts under `social/` when a post should be announced.
 6. Run the local build before publishing.
 
+Korean essay sources follow the register, vocabulary, and word-choice rules
+in `docs/korean-style.md`.
+
 ## Development
 
 ```bash
