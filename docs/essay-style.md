@@ -173,6 +173,31 @@ account.
 - Footnotes are numbered in the order they appear in the body, epigraph first.
 - Footnotes and the provenance line sit outside the length count.
 
+### Reference verification gate
+
+Use a reference only after opening the primary text and reading the passage that
+supports the essay. A search-result excerpt, abstract, metadata page, or quotation
+in a secondary source does not satisfy this gate. Record the exact printed page
+or named section that was read. If only the relevant passage was read, say so;
+never report that the whole work was read.
+
+For a journal or conference paper, include its DOI when one has been assigned.
+During drafting, give the owner a direct reading link, the DOI, and the exact page
+or section to check. Give the canonical publisher or DOI link first. Do not use
+an Internet copy merely because it can be downloaded: an additional copy is
+acceptable only when its public distribution is established by the publisher,
+the author, an institutional repository, or an explicit open-access license. If
+the agent and owner cannot verify the primary passage through a source they are
+authorized to access, do not use the paper in the essay.
+
+Keep access for verification separate from publication. Personal or
+non-commercial access to a paper may allow the agent and owner to read and check
+the passage; it does not authorize publishing, redistributing, or linking that
+copy. A verification link and checked page belong to the drafting conversation,
+not automatically to the published footnote. The published essay carries the
+bibliographic citation and DOI. Include another full-text link only when its
+public distribution is established by one of the sources above.
+
 ## Facts
 
 **Check every figure against the essay's own counts.** A draft said the cycle
@@ -222,6 +247,12 @@ person it was written with, the date, the place, and the host. The record matter
 as much as the text — an essay cannot be separated from the conversation that
 produced it.
 
+Record the actual host name after checking it on the host; do not infer it from
+an earlier essay or another session. Place and host are separate facts. If the
+physical place is not established in the current session, do not infer it from
+the time zone, repository history, or host name. Record the known facts instead,
+for example `from a remote session (top)` / `원격 세션에서 (top)`.
+
     *Written by Claude Opus 5 with Jeong Han Lee, Dr.rer.nat. — 2026-08-01,
     Berkeley, CA (top). The quotations are his, from the session that produced
     this page.*
@@ -253,3 +284,7 @@ Run this on the pair, not on one language.
 10. Two review passes are done, and the second found nothing new.
 11. `heroImage` exists under `public/images/essay-covers/`.
 12. `korean-style.md`'s own checklist has been run on the Korean.
+13. Every reference was read in the primary text at the cited page or section;
+    every paper includes its DOI, and the owner verified the passage through a
+    source the owner was authorized to access before it was used. A published
+    full-text link appears only when its public distribution is established.

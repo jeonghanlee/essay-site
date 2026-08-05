@@ -30,11 +30,15 @@ the field use this word in a meeting?** If not, replace it.
 The Korean is written first — see `essay-style.md`, *Order of writing*, for why
 the damage runs one way only.
 
-Read the Korean essays first — all of them, not a sample. The English drafts are
-not the source: they are the other half of the same material, and reading only
-those produces a translation no matter how carefully the words are chosen. Every
-convention below is visible in the existing files and in none of the English
-ones.
+Read the Korean essays first — all of them, not a sample. This includes a
+Korean essay written by the owner, such as `six-months-on`, even when it is not
+numbered as one of the agent-written series essays. An owner-written counterpart
+can be the source material from which a later series essay was written, so
+omitting it removes part of the series' voice and provenance. The English drafts
+are not the source: they are the other half of the same material, and reading
+only those produces a translation no matter how carefully the words are chosen.
+Every convention below is visible in the existing files and in none of the
+English ones.
 
 Then write the Korean **without the English draft open.** The tell that it was
 open is a Korean sentence carrying an English clause structure: `…로 취급되지
