@@ -6,7 +6,7 @@ This document tracks repository-local milestones, carry-forward items, and exter
 
 **Out of scope:** detailed essay text review, social account operation, credentials, analytics, comments, and engagement workflows.
 
-Next session entry point: M5.3 is complete. Ready to start now (owner to set priority): M6.1 authoring guide in `docs/content.md`; M8.1 link and RSS verification; M8.2 responsive visual pass. Preserve the live deploy and the passing build. Do not start carry-forward decisions (D1-D4) unless the owner reorders them.
+Next session entry point: M5.3 is complete. On 2026-08-06 at repository `HEAD 34e67b1`, `npm run build` passed and generated 27 static pages, including EN/KO essay routes, RSS feeds, and the sitemap. Ready to start now (owner to set priority): M6.1 authoring guide in `docs/content.md`; M8.1 link and RSS verification; M8.2 responsive visual pass. Preserve the live deploy and the passing build. Do not start carry-forward decisions (D1-D4) unless the owner reorders them. The three untracked LinkedIn drafts remain under D4 review; M6.2 stays pending until D4 is decided.
 
 ## Register model
 
@@ -35,10 +35,10 @@ Two-level work tree. Tracking IDs are three kinds: **M** work tasks (`M<group>` 
 
 | ID | Work unit | Status | Ready | Depends | Evidence or next action |
 | :--- | :--- | :---: | :---: | :--- | :--- |
-| M1.1 | Astro static site scaffold | ✅ | | | `npm run build` generates the static site, RSS feeds, and sitemap. |
+| M1.1 | Astro static site scaffold | ✅ | | | Verified 2026-08-06 at `HEAD 34e67b1` with `npm run build`: 27 static pages generated, including RSS feeds and sitemap. |
 | M1.2 | EN default home with KO selection | ✅ | | | `/` renders the EN home page; `/ko/` remains the KO archive. |
 | M1.3 | Previous/next essay navigation | ✅ | | | Chronological prev/next (pubDate ascending, `sortOrder` tiebreak) via `getAdjacentEssays` in `src/lib/site.ts` and shared `EssayNavigation.astro`, wired into both `[slug].astro` pages; series ends hide the missing side. Verified in build. |
-| M2.1 | Import current essays | ✅ | | | Current source essays are present under `src/content/essays/en/` and `src/content/essays/ko/`. |
+| M2.1 | Import current essays | ✅ | | | Current source essays are present under `src/content/essays/en/` and `src/content/essays/ko/`; the 2026-08-06 build rendered 11 EN and 11 KO essay routes at `HEAD 34e67b1`. |
 | M2.2 | Link the user-authored final essay and Claude essay | ✅ | | | `six-months-on` and `the-writer-you-can-recall` are related through frontmatter metadata. |
 | M2.3 | Frontmatter consistency | ✅ | | | Stripped trailing whitespace from essay frontmatter `tags:` / `related:` lines (commit 51b34b4). |
 | M2.4 | owning-the-essay / leaving-social-feeds pair (retired) | ✅ | | | Removed as a byproduct with its three social drafts on 2026-06-14; recoverable from commit 51b34b4. |
@@ -51,7 +51,7 @@ Two-level work tree. Tracking IDs are three kinds: **M** work tasks (`M<group>` 
 | M6.2 | Social announcement guide | ⬜ | | ← D4 | Create `docs/social.md` or expand `social/README.md` with per-channel draft rules and canonical URL handling. |
 | M7.1 | Deploy workflow branch alignment | ✅ | | | `deploy.yml` push trigger changed `main` → `master` to match the local branch (2026-06-14). |
 | M7.2 | Repository remote creation | ✅ | | | `origin` = `git@github.com:jeonghanlee/essay-site.git`; `master` pushed and tracking `origin/master`. |
-| M7.3 | Pages deployment verification | ✅ | | | Live at `https://jeonghanlee.github.io/essay-site/`; deploy workflow succeeds on push to `master`. |
+| M7.3 | Pages deployment verification | ✅ | | | Live at `https://jeonghanlee.github.io/essay-site/`; deploy workflow succeeds on push to `master`. Local build passed 2026-08-06 at `HEAD 34e67b1`; live state was not rechecked in this update. |
 | M8.1 | Link and RSS verification | ⬜ | ▶ | — | Add a repeatable check for internal links, alternate links, RSS XML, and sitemap output. |
 | M8.2 | Responsive visual pass | ⬜ | ▶ | — | Check desktop and mobile layouts for the home page, archives, and essay detail pages. |
 
@@ -99,9 +99,10 @@ Previous flat register identified rows by Topic / Work unit; this maps them to t
 
 ## Status Notes
 
-- Live on GitHub Pages at `https://jeonghanlee.github.io/essay-site/`; deploys on push to `master`, latest from commit 8c8e11b.
+- Live on GitHub Pages at `https://jeonghanlee.github.io/essay-site/`; deploys on push to `master`. Live state was not rechecked on 2026-08-06; the latest recorded live evidence remains commit 8c8e11b.
 - Remote `origin` = `git@github.com:jeonghanlee/essay-site.git`; `master` tracks `origin/master` and is in sync.
 - The deployment workflow targets `master`.
-- Codex's social drafts under `social/linkedin/` (door, writer x2) remain uncommitted and untracked.
+- Repository `HEAD` is `34e67b1`; `master` was in sync with `origin/master` after `git fetch` and `git status` on 2026-08-06. The local `npm run build` passed and generated 27 static pages.
+- Codex's three social drafts under `social/linkedin/` (door, writer x2) remain uncommitted and untracked.
 - This register is shared by Codex and Claude. Codex authored the flat baseline (2026-06-14); Claude committed it, removed the owning-the-essay byproduct, switched KO content to Noto Serif KR, added social share links, rewrote the hero (commits through 8c8e11b, 2026-06-15), and migrated the register to the two-level M-tree.
 - Future milestone updates should be made here, not in agent memory.
