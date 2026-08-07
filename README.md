@@ -83,4 +83,4 @@ The workflow currently listens to pushes on `main`. If the repository keeps `mas
 
 ## Work Register
 
-Project status and future work are tracked in `docs/milestone.md`.
+Project status and future work are tracked in `docs/milestone-a08d2d2.md`.
