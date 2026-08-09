@@ -131,6 +131,12 @@ closing section, compress the older clauses to their bare form as the list
 lengthens — `the sixth, the map but not whether it fits the ground` rather than a
 full relative clause. The most recent one or two may stay in full.
 
+Past ten essays, compress by tens (owner ruling, 2026-08-09): each completed
+group of ten collapses into one or two sentences carrying the group's key
+terms, not a per-essay clause — `앞의 열 편이 금을 하나씩 그어 왔다. 기록은
+… 나르지 못한다고.` — and only the current group enumerates. The eleventh
+essay is the worked example.
+
 ## Closing conventions
 
 Two shapes recur. Neither is mandatory; both earn their place often enough to
@@ -162,6 +168,12 @@ body is fine, but the quote itself must appear somewhere.
 
 A draft with no quoted speech has lost its material, however accurate its
 account.
+
+When a spoken sentence carries an internal identifier the reader cannot know
+— a skill name, a stage number — do not rewrite the quote. Trim its boundary:
+quote the pivot words verbatim (`"좋은걸 찾았네."`) and narrate the rest, or
+carry the whole sentence as indirect speech. Established 2026-08-09; the
+eleventh essay is the worked example.
 
 ## Sources and footnotes
 
@@ -215,7 +227,9 @@ An essay whose subject is fabrication cannot afford one.
 
 ## Review
 
-A written essay is not a finished essay. Two passes, in this order:
+A written essay is not a finished essay. For the Korean, run the listener
+pass first — read it aloud as the hearer; the catch classes live in
+`korean-style.md` (The listener pass). Then two passes, in this order:
 
 1. **Third-person read.** Read it as someone else's page, against these
    documents, and list findings with the line and the exact quote.

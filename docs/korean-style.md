@@ -46,6 +46,59 @@ open is a Korean sentence carrying an English clause structure: `…로 취급�
 `실행 자체의 합계` (*the run's own tally*). Each is correct Korean and each
 reads as English, which is why the trap survives proofreading.
 
+## Compose by speaking, not by rendering
+
+The order-of-writing rule says to keep the English draft closed. 2026-08-09
+showed the draft can be closed and still be open — in the head. An essay
+whose skeleton was composed in internal English and then rendered into
+hangul carries the same translation damage with no English file to blame:
+em-dash insertions (`— 이 한 줄이 —`), rule statements dropped without a
+frame, conclusions before events. The tell appeared while the same agent's
+*conversation* stayed alive (숨을 넣다, 눌린 문장) — the living Korean was
+already there, but only in the speaking register.
+
+So the method is: speak each paragraph to a listener, then transcribe. When
+a passage stiffens, do not patch words — say the events aloud in Korean and
+write down what was said. And the length ceiling is not the cause of
+stiffness: a draft at about 1,750 of 2,700 characters was still clotted. Density
+is a habit; the room is there to let sentences breathe.
+
+## The listener pass (2인칭)
+
+After the author pass and before the third-person read, listen to the essay
+as the hearer — as if someone were reading it aloud to you. The ear catches
+what the eye passes (owner's method, proven 2026-08-09):
+
+- a repeated morpheme the eye forgives: 옮- four times in one sentence,
+  나오다 three times in two, the same verb opening adjacent sentences;
+- a referent that has not been introduced: "그 병" before anything was
+  called a 병; "두 집" as an unexplained image;
+- one word carrying two referents in one sentence: 읽는 쪽 / 다른 쪽;
+- a missing beat the ear needs: 몇 시간 **동안**.
+
+## Office words do not belong in an essay
+
+Words that are correct in a register, a report, or a commit message read as
+장부 언어 on an essay page. Found and replaced 2026-08-09:
+
+| Office word | Essay word |
+| :--- | :--- |
+| 현행(이다) | 지금 것이다 · 서로 자기가 맞다고 |
+| 지목하다 | 고르다 · 골라서 싣다 |
+| 삭제 네 건 | 지우겠다는 표시만 된 파일 네 개 |
+| 작업본 전체 상태 | 지금 일하는 자리 전체 |
+| 통계 (커밋 출력) | 무엇을 어떻게 실었는지 나오는 줄 |
+| 이력이 남는 | 자취가 남는 |
+| 기준서 | 도면이 어떻게 생겨야 하는지 적어 둔 문서 |
+
+Two more from the same day, for the collocation table's spirit: a digest is
+내용의 지문을 뜨다 (재다 and 대 보다 do not carry it); a book is 묶는 것이지
+세우는 것이 아니다 (책 한 권으로 묶다, 책을 다 묶었다). Counters: documents
+are 네 개, not 네 편 and not the bare 넷 — 편 belongs to 글·시·영화, and a
+bare numeral after the noun reads as a ledger. A foreign city whose hangul
+form collides with a Korean word carries its country on first mention:
+오스트리아 빈 — bare 빈 종합병원 reads as an empty hospital.
+
 ## The owner's words carry the essay
 
 Every essay quotes him in the spoken original, and those quotes are what the
@@ -333,6 +386,8 @@ Footnotes carry the original Latin or English alongside the Korean.
 3. No nominalized native verb is used as a technical noun.
 3a. No paragraph opens with a conclusion or a figure whose referent has not yet
    appeared on the page.
+3b. The listener pass has been run, and what the ear caught — repeated
+   morphemes, unintroduced referents, a missing beat — is fixed.
 4. Each loanword has one spelling throughout the file.
 5. Count 손 and any other series term the English draft repeats; ordinary
    actions do not borrow the metaphor.
