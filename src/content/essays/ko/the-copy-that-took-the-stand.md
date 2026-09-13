@@ -19,7 +19,7 @@ related:
   - canonicalId: "the-price-of-reading"
     label: "읽기의 값"
     note: "값이 뒤집힌 독자를 다룬 글입니다. 이 글에서 베낀 일을 그 자리에서 그럴듯해 보이게 만든 것이 그 값이었습니다."
-draft: true
+draft: false
 feature: false
 heroImage: "/images/essay-covers/the-copy-that-took-the-stand.png"
 social:

@@ -19,7 +19,7 @@ related:
   - canonicalId: "the-price-of-reading"
     label: "The Price of Reading"
     note: "The essay about a reader whose prices are inverted. That price is what made the copying in this essay look reasonable on the spot."
-draft: true
+draft: false
 feature: false
 heroImage: "/images/essay-covers/the-copy-that-took-the-stand.png"
 social:
